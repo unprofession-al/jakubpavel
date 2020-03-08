@@ -1,0 +1,56 @@
+---
+checks:
+  geoadminch_glue_at_ins1:
+    resolver: "ins1.admin.ch:53"
+    resolve: "geo.admin.ch."
+    expect:
+      authority_section:
+        - "geo.admin.ch. 3600 IN NS ns1.geo.admin.ch."
+        - "geo.admin.ch. 3600 IN NS ns2.geo.admin.ch."
+        - "geo.admin.ch. 3600 IN NS ns3.geo.admin.ch."
+        - "geo.admin.ch. 3600 IN NS ns4.geo.admin.ch."
+      additional_section:
+        - "ns1.geo.admin.ch. 3600 IN A 205.251.196.229"
+        - "ns2.geo.admin.ch. 3600 IN A 205.251.199.166"
+        - "ns3.geo.admin.ch. 3600 IN A 205.251.193.78"
+        - "ns4.geo.admin.ch. 3600 IN A 205.251.195.156"
+        - "ns1.geo.admin.ch. 3600 IN AAAA 2600:9000:5304:e500::1"
+        - "ns2.geo.admin.ch. 3600 IN AAAA 2600:9000:5307:a600::1"
+        - "ns3.geo.admin.ch. 3600 IN AAAA 2600:9000:5301:4e00::1"
+        - "ns4.geo.admin.ch. 3600 IN AAAA 2600:9000:5303:9c00::1"
+  geoadminch_glue_at_ins2:
+    resolver: "ins2.admin.ch:53"
+    resolve: "geo.admin.ch."
+    expect:
+      authority_section:
+        - "geo.admin.ch. 3600 IN NS ns1.geo.admin.ch."
+        - "geo.admin.ch. 3600 IN NS ns2.geo.admin.ch."
+        - "geo.admin.ch. 3600 IN NS ns3.geo.admin.ch."
+        - "geo.admin.ch. 3600 IN NS ns4.geo.admin.ch."
+      additional_section:
+        - "ns1.geo.admin.ch. 3600 IN A 205.251.196.229"
+        - "ns2.geo.admin.ch. 3600 IN A 205.251.199.166"
+        - "ns3.geo.admin.ch. 3600 IN A 205.251.193.78"
+        - "ns4.geo.admin.ch. 3600 IN A 205.251.195.156"
+        - "ns1.geo.admin.ch. 3600 IN AAAA 2600:9000:5304:e500::1"
+        - "ns2.geo.admin.ch. 3600 IN AAAA 2600:9000:5307:a600::1"
+        - "ns3.geo.admin.ch. 3600 IN AAAA 2600:9000:5301:4e00::1"
+        - "ns4.geo.admin.ch. 3600 IN AAAA 2600:9000:5303:9c00::1"
+  geoadminch_glue_at_ins3:
+    resolver: "ins3.admin.ch:53"
+    resolve: "geo.admin.ch."
+    expect:
+      authority_section:
+        - "geo.admin.ch. 3600 IN NS ns1.geo.admin.ch."
+        - "geo.admin.ch. 3600 IN NS ns2.geo.admin.ch."
+        - "geo.admin.ch. 3600 IN NS ns3.geo.admin.ch."
+        - "geo.admin.ch. 3600 IN NS ns4.geo.admin.ch."
+      additional_section:
+        - "ns1.geo.admin.ch. 3600 IN A 205.251.196.229"
+        - "ns2.geo.admin.ch. 3600 IN A 205.251.199.166"
+        - "ns3.geo.admin.ch. 3600 IN A 205.251.193.78"
+        - "ns4.geo.admin.ch. 3600 IN A 205.251.195.156"
+        - "ns1.geo.admin.ch. 3600 IN AAAA 2600:9000:5304:e500::1"
+        - "ns2.geo.admin.ch. 3600 IN AAAA 2600:9000:5307:a600::1"
+        - "ns3.geo.admin.ch. 3600 IN AAAA 2600:9000:5301:4e00::1"
+        - "ns4.geo.admin.ch. 3600 IN AAAA 2600:9000:5303:9c00::1"
