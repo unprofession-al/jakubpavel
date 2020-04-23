@@ -13,6 +13,7 @@ type Config struct {
 type CheckConfig struct {
 	Resolver        string       `yaml:"resolver" json:"resolver"`
 	ResolverTimeout string       `yaml:"resolver_timeout" json:"resolver_timeout"`
+	UseTCP          bool         `yaml:"use_tcp" json:"use_tcp"`
 	Resolve         string       `yaml:"resolve" json:"resolve"`
 	Expect          ExpectConfig `yaml:"expect" json:"expect"`
 }

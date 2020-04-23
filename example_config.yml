@@ -3,6 +3,7 @@ checks:
   geoadminch_glue_at_ins1:
     resolver: "ins1.admin.ch:53"
     resolve: "geo.admin.ch."
+    use_tcp: true
     expect:
       authority_section:
         - "geo.admin.ch. 3600 IN NS ns1.geo.admin.ch."

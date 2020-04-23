@@ -11,6 +11,7 @@ import (
 type Check struct {
 	Resolver        string        `yaml:"resolver" json:"resolver"`
 	ResolverTimeout time.Duration `yaml:"resolver_timeout" json:"resolver_timeout"`
+	Proto           string        `yaml:"proto" json:"proto"`
 	Resolve         string        `yaml:"resolve" json:"resolve"`
 	Expect          Expect        `yaml:"-" json:"-"`
 	ExpectConfig    ExpectConfig  `yaml:"expect_config" json:"expect_config"`
@@ -72,9 +73,15 @@ func NewChecker(checkConfigs map[string]CheckConfig) (Checker, error) {
 			return checker, err
 		}
 
+		proto := "udp"
+		if cConfig.UseTCP {
+			proto = "tcp"
+		}
+
 		check := Check{
 			Resolver:        cConfig.Resolver,
 			ResolverTimeout: timeout,
+			Proto:           proto,
 			Resolve:         cConfig.Resolve,
 			Expect:          expect,
 			ExpectConfig:    cConfig.Expect,
@@ -93,6 +100,7 @@ func (c Checker) Run() []CheckResult {
 
 	client := new(dns.Client)
 	for checkName, check := range c.Checks {
+		client.Net = check.Proto
 		client.Timeout = check.ResolverTimeout
 		result := CheckResult{
 			Name:      checkName,
